@@ -1,6 +1,6 @@
 package com.infsis.example.DTOs;
 
-public class Blog {
+public class BlogDTO {
     private Integer id;
     private String name;
 }

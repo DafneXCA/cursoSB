@@ -1,13 +1,15 @@
 package com.infsis.example.Models;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
+import org.springframework.data.annotation.CreatedDate;
+import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
 import java.time.LocalDateTime;
+import java.util.List;
 
 @Entity
+@Table(name = "\"user\"")
+@EntityListeners(AuditingEntityListener.class)
 public class User {
 
     @Id
@@ -16,6 +18,21 @@ public class User {
 
     private String name;
     private String email;
+
+    @OneToMany(fetch = FetchType.LAZY,mappedBy = "user")
+    private List<Article> articles;
+
+    @ManyToMany
+    @JoinTable(
+            name = "user_role",
+            joinColumns=@JoinColumn(name = "user_id"),
+            inverseJoinColumns = @JoinColumn(name = "role_id")
+    )
+    private List<Role> roles;
+
+    @OneToOne(fetch = FetchType.LAZY,mappedBy = "user")
+    private Blog blog;
+    @CreatedDate
     private LocalDateTime createdAt;
 
     public User(Integer id, String name, String email, LocalDateTime createdAt) {
@@ -51,6 +68,8 @@ public class User {
     public void setEmail(String email) {
         this.email = email;
     }
+
+
 
     public LocalDateTime getCreatedAt() {
         return createdAt;
