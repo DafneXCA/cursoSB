@@ -1,5 +1,9 @@
 package com.infsis.example.DTOs;
 
+import jakarta.validation.constraints.Email;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
+
 public class UserDTO {
 
     /*Si bien el id puede no relevante se muestra este dato al Usuario Final (En la UI),
@@ -9,7 +13,12 @@ public class UserDTO {
     */
 
     private Integer id;
+
+    @NotBlank
+    @NotNull
     private String name;
+
+    @Email
     private String email;
 
     public UserDTO(Integer id,String name, String email) {

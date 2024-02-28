@@ -8,7 +8,7 @@ import java.time.LocalDateTime;
 import java.util.List;
 
 @Entity
-@Table(name = "\"user\"")
+@Table(name = "\"users\"")
 @EntityListeners(AuditingEntityListener.class)
 public class User {
 
