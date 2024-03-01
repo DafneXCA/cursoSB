@@ -3,10 +3,11 @@ server:
 
 spring:
   datasource:
-    url: jdbc:postgresql://localhost:5436/example
-    username: postgres
-    password: postgres
+    url: jdbc:postgres://postgresql:87ItpkPHePWv20TcKtDGWaK2Q2scepUk@dpg-cngubqgl6cac73ajnelg-a/exampledb_lqrm
+    username: postgresql
+    password: 87ItpkPHePWv20TcKtDGWaK2Q2scepUk
   jpa:
     show-sql: true
     hibernate:
       ddl-auto: update
+    database-platform: org.hibernate.dialect.PostgresSQLDialect
