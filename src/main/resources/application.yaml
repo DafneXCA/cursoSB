@@ -3,7 +3,7 @@ server:
 
 spring:
   datasource:
-    url: jdbc:postgres://postgresql:87ItpkPHePWv20TcKtDGWaK2Q2scepUk@dpg-cngubqgl6cac73ajnelg-a.oregon-postgres.render.com/exampledb_lqrm
+    url: jdbc:postgresql://dpg-cngubqgl6cac73ajnelg-a.oregon-postgres.render.com/exampledb_lqrm
     username: postgresql
     password: 87ItpkPHePWv20TcKtDGWaK2Q2scepUk
     driver-class-name: org.postgresql.Driver
@@ -13,4 +13,4 @@ spring:
       ddl-auto: update
     properties:
       hibernate:
-        dialect: org.hibernate.dialect.PostgresSQLDialect
+        dialect: org.hibernate.dialect.PostgreSQLDialect
