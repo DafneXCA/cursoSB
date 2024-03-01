@@ -3,9 +3,9 @@ server:
 
 spring:
   datasource:
-    url: jdbc:postgresql://dpg-cngubqgl6cac73ajnelg-a.oregon-postgres.render.com/exampledb_lqrm
-    username: postgresql
-    password: 87ItpkPHePWv20TcKtDGWaK2Q2scepUk
+    url: jdbc:postgresql://dpg-cnh019n109ks7387jqd0-a.oregon-postgres.render.com/example_bo7i
+    username: example_bo7i_user
+    password: iQO9LyTyq1OFkc4prCO1YEYiBpLGWDuz
     driver-class-name: org.postgresql.Driver
   jpa:
     show-sql: true
